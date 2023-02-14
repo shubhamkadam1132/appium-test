@@ -3,6 +3,8 @@ package appimtests;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
+import io.appium.java_client.remote.HideKeyboardStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ById;
@@ -10,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.AppiumDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class sagesurferapp {
 
@@ -33,8 +37,12 @@ public static void openSagesurfer() throws Exception {
 	 //cap.setCapability("udid","emulator-5554"); //emulator
 	 
 	 
-	 
-	 
+	 //for hiding keybored
+	cap.setCapability("connectHardwareKeyboard", false);
+
+
+
+
 	 cap.setCapability("udid","520044c6fe3a3573");
 
 	//cap.setCapability("udid","5P4TX8IFSWB6DAMN");//Shubham
@@ -131,24 +139,31 @@ public static void openSagesurfer() throws Exception {
 	//public void TC1() {
 	
 	//login
-	
+
+	//driver.hidekeyboard();
+	System.out.println("current keybord status"+driver.isBrowser());
+
+
+
     driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
 	
 	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_password")).sendKeys("Sag@!nd!1");
 	
 	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_server_code")).sendKeys("sage006");
-	
 	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/button_login")).click();
 	
 	//invite friend
 	
 	driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
-	
+
+
+
+
 	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[4]/android.widget.RelativeLayout/android.widget.TextView")).click();
 	
 	
 	
-	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.EditText")).sendKeys("kadamcc");
+	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.EditText")).sendKeys("komalcc");
 	
 	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/invite_user_btn")).click();
 	
@@ -157,32 +172,116 @@ public static void openSagesurfer() throws Exception {
 	
 
 
-	/*driver.findElement(By.id("com.sagesurfer.collaborativecares:id/new_user_radio_btn")).click();
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/new_user_radio_btn")).click();
 	
 	//invite new  user
 
 
 	driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout[1]/android.widget.EditText")).sendKeys("vinay");
 	
-	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/team_email_id_txt")).sendKeys("vinay1111@yopmail.com");
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/team_email_id_txt")).sendKeys("shubham55@yopmail.com");
 	
 	// click on new user 
 	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/invite_user_btn")).click();
-	
+
+
+
+
 	//pending invites
 	
-	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/pending_btn")).click();*/
-	
-	
-	
-	
-	
-	
-	
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/pending_btn")).click();
 
+
+	// search button
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_search")).sendKeys("shubham");
+
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/imagebutton_search")).click();
+
+// filter
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/notification_filter")).click();
 	
-	
-	//Thread.sleep(9990000);	//	close the application
+//Start date
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/start_date_txt")).click();
+
+
+//	driver.findElement(By.xpath("//android.view.View[@content-desc=\"02 February 2023\"]")).click();
+
+
+
+	driver.findElement(By.id("android:id/button1")).click();
+
+
+
+//End date
+
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/end_date_txt")).click();
+
+	//driver.findElement(By.xpath("//android.view.View[@content-desc=\"13 February 2023\"]")).click();
+
+
+	driver.findElement(By.id("android:id/button1")).click();
+
+
+
+
+// clear secton
+
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/clear_selection_date")).click();
+
+
+
+//Start date
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/start_date_txt")).click();
+
+
+	//driver.findElement(By.xpath("//android.view.View[@content-desc=\"02 February 2023\"]")).click();
+
+
+
+	driver.findElement(By.id("android:id/button1")).click();
+
+
+//End date
+
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/end_date_txt")).click();
+
+	//driver.findElement(By.xpath("//android.view.View[@content-desc=\"13 February 2023\"]")).click();
+
+
+	driver.findElement(By.id("android:id/button1")).click();
+
+
+
+
+
+
+// done button
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/imageview_toolbar_save")).click();
+
+
+//back previous button
+
+
+	driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
+
+// Go to Home
+
+	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/textviewhome")).click();
+
+
+
+	//Thread.sleep(9990000);
+
+
+
+	// 	close the application
 	//driver.quit();
 
 }
