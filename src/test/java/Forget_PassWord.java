@@ -111,7 +111,7 @@ import java.util.concurrent.TimeUnit;
 
         driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_forgot_password_fragment_security_answer")).sendKeys("sage");
 
-
+//Passing the Captcha In
         driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_forgot_password_fragment_captcha_answer")).sendKeys("Tyov");
 
 
