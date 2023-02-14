@@ -30,9 +30,9 @@ public class LoginPage {
         cap.setCapability("connectHardwareKeyboard", false);
 
 
-       // cap.setCapability("udid", "520044c6fe3a3573");
+        cap.setCapability("udid", "520044c6fe3a3573");
 
-        cap.setCapability("udid","R9PT50F4ZZB");//Shubham
+        //cap.setCapability("udid","R9PT50F4ZZB");//android Tab
 
 
         cap.setCapability("platformName", "Android");
@@ -107,8 +107,6 @@ public class LoginPage {
 
         //Sagesurfer emulator
 
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
-
 
         //driver.hidekeyboard();
         System.out.println("current keybord status" + driver.isBrowser());
@@ -117,12 +115,28 @@ public class LoginPage {
         driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
 
         driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_password")).sendKeys("Sag@!nd!1");
+//
+        //Eye Button
+
+        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/text_input_end_icon")).click();
+
+
 
         driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_server_code")).sendKeys("sage006");
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/button_login")).click();
+        //Remember Me
 
-        driver.quit();
+        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/saveLoginCheckBox")).click();
 
+
+        // click on Login
+
+        //driver.findElement(By.id("com.sagesurfer.collaborativecares:id/button_login")).click();
+
+        //Close the app
+
+
+
+        //driver.quit();
 
 
 
