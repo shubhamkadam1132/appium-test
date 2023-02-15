@@ -30,91 +30,89 @@ public class LoginPage {
         }
     }
 
-    @Test(priority = 1)
+    @Test(priority = 0)
 
-    public static void openSagesurfer() throws Exception {
+        public static void openSagesurfer () throws Exception {
 
-        DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability("deviceName", "emulator");
+            DesiredCapabilities cap = new DesiredCapabilities();
+            cap.setCapability("deviceName", "emulator");
 
-        //for hiding keybored
-        cap.setCapability("connectHardwareKeyboard", false);
+            //for hiding keybored
+            cap.setCapability("connectHardwareKeyboard", false);
 
-        //cap.setCapability("udid","emulator-5554"); //emulator
-        cap.setCapability("udid", "520044c6fe3a3573");
+            //cap.setCapability("udid","emulator-5554"); //emulator
+            cap.setCapability("udid", "520044c6fe3a3573");
 
-        //cap.setCapability("udid","R9PT50F4ZZB");//android Tab
+            //cap.setCapability("udid","R9PT50F4ZZB");//android Tab
 
-        cap.setCapability("platformName", "Android");
+            cap.setCapability("platformName", "Android");
 
-        cap.setCapability("appium:app", "C:\\\\Apk\\\\Sagesurfer.apk");
+            cap.setCapability("appium:app", "C:\\\\Apk\\\\Sagesurfer.apk");
 
-        //cap.setCapability("appium:app","C:\\Apk\\calculator.apk");
-        //cap.setCapability("platformVersion","09"); //emulator
+            //cap.setCapability("appium:app","C:\\Apk\\calculator.apk");
+            //cap.setCapability("platformVersion","09"); //emulator
 
-        cap.setCapability("platformVersion", "09");///samsung
+            cap.setCapability("platformVersion", "09");///samsung
 
-        cap.setCapability("automationName", "UiAutomator1");
-
-
-        URL url = new URL("http://127.0.0.1:4723/wd/hub");
-
-        /// pass the appium any driver
-
-        driver = new AppiumDriver(url, cap);
-
-        //Print the satement
-
-        System.out.println("Application Started...");
-
-        driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
-
-        //Sagesurfer emulator
-
-        //driver.hidekeyboard();
-        //System.out.println("current keybord status" + driver.isBrowser());
-
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
+            cap.setCapability("automationName", "UiAutomator1");
 
 
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_password")).sendKeys("Sag@!nd!1");
-//
-        //Eye Button
+            URL url = new URL("http://127.0.0.1:4723/wd/hub");
 
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/text_input_end_icon")).click();
+            /// pass the appium any driver
 
+            driver = new AppiumDriver(url, cap);
 
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_server_code")).sendKeys("sage006");
-        //Remember Me
+            //Print the satement
 
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/saveLoginCheckBox")).click();
+            System.out.println("Application Started...");
 
+            driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 
-        // click on Login
+            //Sagesurfer emulator
 
-        driver.findElement(By.id("com.sagesurfer.collaborativecares:id/button_login")).click();
-
-
-        //Close the app
-
-        //logout  the app
-    }
+            //driver.hidekeyboard();
+            //System.out.println("current keybord status" + driver.isBrowser());
 
 
+            driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
 
 
+            driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_password")).sendKeys("Sag@!nd!1");
 
 
-@Test(priority = 0)
+            //Eye Button
 
+            driver.findElement(By.id("com.sagesurfer.collaborativecares:id/text_input_end_icon")).click();
+
+
+            driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_server_code")).sendKeys("sage006");
+            //Remember Me
+
+            driver.findElement(By.id("com.sagesurfer.collaborativecares:id/saveLoginCheckBox")).click();
+
+
+            // click on Login
+
+            driver.findElement(By.id("com.sagesurfer.collaborativecares:id/button_login")).click();
+        }
+
+
+    @Test(priority =1)
     void test1() {
-    driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
+        driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
+
+
+      /*  @Test(priority = 2)
+        void test(){
+
+     driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[14]/android.widget.RelativeLayout/android.widget.TextView")).click();
 
 }
-        // driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat[14]/android.widget.RelativeLayout/android.widget.TextView")).click();
 
-
-
+}
+       */
+    }
         @AfterTest()
 
 
