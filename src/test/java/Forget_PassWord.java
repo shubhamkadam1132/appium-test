@@ -3,11 +3,14 @@
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-    public class Forget_PassWord {
+
+@Test
+public class Forget_PassWord{
 
         static AppiumDriver driver;
 
@@ -21,7 +24,7 @@ import java.util.concurrent.TimeUnit;
                 exp.printStackTrace();
             }
         }
-
+@Test()
         public static void openSagesurfer() throws Exception {
 
             DesiredCapabilities cap = new DesiredCapabilities();
@@ -50,6 +53,13 @@ import java.util.concurrent.TimeUnit;
             cap.setCapability("automationName", "UiAutomator1");
             //cap.setCapability("appPackage","com.android.contacts");
             //cap.setCapability("appActivity","com.android.contacts.activities.PeopleActivity");
+
+
+
+
+             cap.setCapability("appium:connectHardwareKeyboard", false);
+
+
 
 
             //cap.setCapability("appPackage","com.ulsumobile.calculator");
@@ -85,14 +95,13 @@ import java.util.concurrent.TimeUnit;
 
             System.out.println("Application Started...");
 
-            driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(800, TimeUnit.SECONDS);
 
 
             //Sagesurfer emulator
 
-
             //driver.hidekeyboard();
-            System.out.println("current keybord status" + driver.isBrowser());
+           // System.out.println("current keybord status" + driver.isBrowser());
 
 
             driver.findElement(By.id("com.sagesurfer.collaborativecares:id/textview_login_forgot_password")).click();
@@ -112,10 +121,20 @@ import java.util.concurrent.TimeUnit;
         driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_forgot_password_fragment_security_answer")).sendKeys("sage");
 
 //Passing the Captcha In
+
+
         driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_forgot_password_fragment_captcha_answer")).sendKeys("Tyov");
 
 
             driver.findElement(By.id("com.sagesurfer.collaborativecares:id/btn_submit")).click();
+
+
+
+
+
+
+
+
 
 
         }

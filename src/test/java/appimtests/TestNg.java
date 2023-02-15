@@ -1,7 +1,9 @@
 package appimtests;
 
 import com.google.common.annotations.VisibleForTesting;
+import org.testng.annotations.Test;
 
+@Test
 public class TestNg {
 
 	@VisibleForTesting

@@ -30,6 +30,9 @@ try {
 	exp.printStackTrace();
 }
 	}
+
+	@Test(priority = 0)
+
 public static void openSagesurfer() throws Exception { 
 	
 	DesiredCapabilities cap = new DesiredCapabilities();
@@ -37,10 +40,6 @@ public static void openSagesurfer() throws Exception {
 	 //cap.setCapability("udid","emulator-5554"); //emulator
 	 
 	 
-	 //for hiding keybored
-	cap.setCapability("connectHardwareKeyboard", false);
-
-
 
 
 	 cap.setCapability("udid","520044c6fe3a3573");
@@ -99,53 +98,25 @@ public static void openSagesurfer() throws Exception {
 	System.out.println("Application Started...");
 	
 	driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
-	
-	//Thread.sleep(9990000);	
-	//calculator
-	/*driver.findElement(By.id("com.ulsumobile.calculator:id/iv_7")).click();
-	
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_jia")).click();
-	
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_3")).click();
-	
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_deng")).click();
-	
-	
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_jia")).click();
-	
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_5")).click();
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_5")).click();
-	
-	
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_chu")).click();
-	
-	driver.findElement(By.id("com.ulsumobile.calculator:id/iv_deng")).click();*/
-	
-	//Sagesurfer emulator
-	
-	/*driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
-	
-	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_password")).sendKeys("Sag@!nd!1");
-	
-	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_server_code")).sendKeys("sage006");
-	
-	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/button_login")).click();*/
-	
-	//sagesurfer samsung device
-	
-	
-	
-	
-	//public void TC1() {
+
+
 	
 	//login
 
 	//driver.hidekeyboard();
+
 	System.out.println("current keybord status"+driver.isBrowser());
 
+//for hiding keybored
+
+		cap.setCapability("connectHardwareKeyboard", false);
 
 
-    driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
+
+
+
+
+		driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_name")).sendKeys("shubhamk");
 	
 	driver.findElement(By.id("com.sagesurfer.collaborativecares:id/edittext_login_user_password")).sendKeys("Sag@!nd!1");
 	
@@ -277,23 +248,17 @@ public static void openSagesurfer() throws Exception {
 
 
 
-	//Thread.sleep(9990000);
 
 
+
+
+
+	Thread.sleep(9990000);
 
 	// 	close the application
-	//driver.quit();
+	driver.quit();
 
 }
 } 
-	
-	
-
-  
 
 	
-	
-	
-	
-	
-
